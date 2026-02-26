@@ -1,0 +1,26 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int main(){
+	string s;
+	getline(cin, s); 
+	int letterC=0,upperC=0,lowerC=0,digitC=0,digitS=0;
+	for(it=s.begin();it !=s.end(); it++){
+		if(isalpha(it)) {
+			letterC++;
+			
+			if(isupper(it)) upperC++;
+			else lowerC++;
+		}
+		else if(isdigit(it)){
+			digitC++;
+			digitS+=(it-'0');
+		}
+	}
+	cout<<"number of letters :"<<letterC<<endl;	
+	cout<<"number of upper :"<<upperC<<endl;
+	cout<<"number of lower :"<<lowerC<<endl;		
+	cout<<"number of digits :"<<digitC<<endl;	
+	cout<<"sum of digits :"<<digitS<<endl;	
+	return 0;
+}
